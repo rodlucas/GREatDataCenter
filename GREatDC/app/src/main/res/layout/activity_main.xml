@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="2"
+    tools:context="br.ufc.great.greatdc.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/image"
+            android:layout_height="@dimen/image"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/cluster" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/cluster_room"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_image" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/block"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/image2"
+                android:layout_height="@dimen/image2"
+                android:src="@drawable/seguro" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/status"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_image2" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tx_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/safety"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_main_block" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/block"
+            android:layout_weight="3"
+            android:background="@drawable/rounded2"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/image2"
+                    android:layout_height="@dimen/image2"
+                    android:src="@drawable/umidade" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/humidity"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_image2" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tx_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="40%"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_main_block" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/block"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="2"
+            android:background="@drawable/rounded3"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="@dimen/image2"
+                    android:layout_height="@dimen/image2"
+                    android:src="@drawable/temperatura" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/temperature"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_image2" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tx_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="25º"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_main_block" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/image"
+            android:layout_height="@dimen/image"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/gerador" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/generator_room"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_image" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/block"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded4"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/image2"
+                android:layout_height="@dimen/image2"
+                android:src="@drawable/umidade" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/noise"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_image2" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tx_noise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Normal 20dB"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_main_block" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

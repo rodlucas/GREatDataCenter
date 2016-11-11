@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">GREatDC</string>
+    <string name="main_screen_title">GREat Data Center</string>
+    <string name="temp_screen_title">Dados Temperatura</string>
+
+    <!-- tela 1-->
+    <string name="cluster_room">Sala do Cluster</string>
+    <string name="generator_room">Gerador de Energia</string>
+    <string name="status">Status do ambiente</string>
+    <string name="humidity">Umidade do ambiente</string>
+    <string name="temperature">Temperatura</string>
+    <string name="noise">Nível de ruído do gerador</string>
+
+    <string name="safety">Seguro</string>
+    <string name="alert">Alerta</string>
+    <string name="emergency">Emergência</string>
+
+    <string name="normal">Normal</string>
+
+
+    <!-- tela 2-->
+    <string name="actual_temperature">Temperatura atual</string>
+    <string name="temperature_history">Histórico de temperatura</string>
+    <string name="temperature_table">Temperatura (ºC)</string>
+    <string name="time">Tempo (h)</string>
+
+    <string-array name="hours_array">
+        <item>Últimas 24h</item>
+        <item>Últimas 12h</item>
+    </string-array>
+
+</resources>
