@@ -6,12 +6,12 @@
     <dimen name="image">50dp</dimen>
     <dimen name="text_image">25dp</dimen>
 
-    <dimen name="image2">30dp</dimen>
+    <dimen name="image2">25dp</dimen>
     <dimen name="text_image2">15dp</dimen>
 
 
-    <dimen name="text_main_block">40dp</dimen>
+    <dimen name="text_main_block">35dp</dimen>
 
-    <dimen name="block">90dp</dimen>
+    <dimen name="block">80dp</dimen>
 
 </resources>
