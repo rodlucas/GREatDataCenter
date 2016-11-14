@@ -30,6 +30,11 @@ import java.util.List;
  * db.authenticate('gdc', 'gdc')
  * collection = db['cluster_room']
  * print "Conectou com o MongoDB"
+ *Database: admin
+ *User Name: root
+ *Password: 5mEzEp40
+ *Auth Mechanism: SCRAM-SHA-1
+ *
  */
 
 public class ConnectionDB {

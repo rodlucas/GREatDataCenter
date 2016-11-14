@@ -17,7 +17,7 @@ public class TempActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temp);
-
+        spinner = (Spinner) findViewById(R.id.sp_hours);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.hours_array, android.R.layout.simple_spinner_item);
@@ -26,7 +26,7 @@ public class TempActivity extends AppCompatActivity implements AdapterView.OnIte
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
-        spinner = (Spinner) findViewById(R.id.sp_hours);
+
         spinner.setOnItemSelectedListener(this);
     }
 

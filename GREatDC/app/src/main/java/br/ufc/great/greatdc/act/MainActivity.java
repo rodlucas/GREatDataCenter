@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txTemperature;
     TextView txHumidity;
     TextView txNoise;
+    TextView txEnergy;
     ConnectionDB db;
 
     @Override
@@ -27,11 +28,11 @@ public class MainActivity extends AppCompatActivity {
         txTemperature=(TextView)findViewById(R.id.tx_temperature);
         txHumidity=(TextView)findViewById(R.id.tx_humidity);
         txNoise=(TextView)findViewById(R.id.tx_noise);
-
+        txEnergy=(TextView) findViewById(R.id.tx_energy);
         changeFont();
 
         db = new ConnectionDB();
-        db.connect();
+        //db.connect();
 
 
     }
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         txTemperature.setTypeface(typeFace);
         txHumidity.setTypeface(typeFace);
         txNoise.setTypeface(typeFace);
-
+        txEnergy.setTypeface(typeFace);
     }
 
 
