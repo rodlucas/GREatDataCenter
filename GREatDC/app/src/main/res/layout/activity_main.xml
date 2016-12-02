@@ -14,27 +14,6 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="@dimen/image"
-            android:layout_height="@dimen/image"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/cluster" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="@string/cluster_room"
-            android:textAlignment="center"
-            android:textSize="@dimen/text_image" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="@dimen/block"
         android:layout_marginBottom="10dp"
         android:background="@drawable/rounded_system"
@@ -69,6 +48,27 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_main_block" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/image"
+            android:layout_height="@dimen/image"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/cluster" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/cluster_room"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_image" />
     </LinearLayout>
 
     <LinearLayout
@@ -157,7 +157,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
