@@ -30,7 +30,7 @@
             android:name=".act.TempActivity"
             android:label="@string/temp_screen_title" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.LoginActivity"
             android:label="@string/title_activity_login"></activity>
     </application>
 

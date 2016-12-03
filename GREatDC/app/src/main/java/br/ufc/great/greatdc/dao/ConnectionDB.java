@@ -15,6 +15,7 @@ import com.mongodb.client.MongoDatabase;
 
 import org.bson.Document;
 
+import br.ufc.great.greatdc.model.ClusterRoom;
 
 /**
  * user: gdc
@@ -45,7 +46,6 @@ public class ConnectionDB {
     public void getCountDocsClusterRoom(){
         MongoCollection<Document> collection = db.getCollection("cluster_room");
         try {
-            // read db
             try {
                 System.out.println(collection.count());
             } catch (MongoTimeoutException mte) {
@@ -62,7 +62,6 @@ public class ConnectionDB {
         MongoCursor<Document> cursor = collection.find().iterator();
 
         try {
-            // read db
             try {
                 while (cursor.hasNext()) {
                     System.out.println(cursor.next().toJson());
@@ -77,20 +76,19 @@ public class ConnectionDB {
         }
     }
 
-    public void getLastDocClusterRoom(){
+    public ClusterRoom getLastDocClusterRoom(){
 
+        ClusterRoom cr = new ClusterRoom();
         MongoCollection<Document> collection = db.getCollection("cluster_room");
+
         try {
             try {
                 FindIterable<Document> find = collection.find().sort(new BasicDBObject("$natural", -1)).limit(1);
                 MongoCursor<Document> cursor = find.iterator();
                 while (cursor.hasNext()) {
                     Document doc = cursor.next();
-                    double temp = (double) doc.get("temperature");
-                    double humi = (double) doc.get("humidity");
-
-                    System.out.println(temp);
-                    System.out.println(humi);
+                    cr.setTemperature((double) doc.get("temperature"));
+                    cr.setHumidity((double) doc.get("humidity"));
                 }
             } catch (MongoTimeoutException mte) {
                 mte.printStackTrace();
@@ -98,6 +96,7 @@ public class ConnectionDB {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return cr;
     }
 
     public void closeConnection(){
