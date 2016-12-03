@@ -4,64 +4,111 @@ package br.ufc.great.greatdc.dao;
  * Created on 13/11/2016.
  */
 
-
-import android.util.Log;
-
+import com.mongodb.BasicDBObject;
 import com.mongodb.MongoClient;
-import com.mongodb.MongoCredential;
+import com.mongodb.MongoClientURI;
 import com.mongodb.MongoTimeoutException;
-import com.mongodb.ServerAddress;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.bson.Document;
+
 
 /**
- * ip: 52.67.30.209
- * porta: 27017
- * nome do banco: greatDataCenter
- * usuário: gdc
- * senha: gdc
- * nome da collection: cluster_room
- * em python usei esse código para me conectar com o banco:
- * connection = MongoClient('52.67.11.168', 27017)
- * db = connection['greatDataCenter']
- * db.authenticate('gdc', 'gdc')
- * collection = db['cluster_room']
- * print "Conectou com o MongoDB"
- *Database: admin
- *User Name: root
- *Password: 5mEzEp40
- *Auth Mechanism: SCRAM-SHA-1
- *
+ * user: gdc
+ * pass: gdc
+ * banco: greatDataCenter
+ * collection: cluster_room
  */
 
 public class ConnectionDB {
 
+    MongoDatabase db = null;
+    MongoClientURI uri = new MongoClientURI("mongodb://gdc:gdc@52.67.87.15:27017/?authSource=greatDataCenter");
+    MongoClient mongoClient = new MongoClient(uri);
+
     public ConnectionDB() {
-
-    }
-
-    public void connect() {
-        MongoCredential journaldevAuth = MongoCredential.createPlainCredential("gdc", "greatDataCenter", "gdc".toCharArray());
-        List<MongoCredential> auths = new ArrayList<MongoCredential>();
-        auths.add(journaldevAuth);
-
-        ServerAddress serverAddress = new ServerAddress("52.67.11.168", 27017);
-        MongoClient mongo = new MongoClient(serverAddress, auths);
-
-        MongoDatabase db = mongo.getDatabase("greatDataCenter");
-        MongoCollection table = db.getCollection("cluster_room");
-
-        // read db
         try {
-            Log.i("GREatDC", "Número de docs:" + table.count());
-        } catch (MongoTimeoutException mte) {
-            mte.printStackTrace();
+            // Get database
+            db = mongoClient.getDatabase("greatDataCenter");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
     }
 
+    public MongoDatabase getConnection() {
+        return db;
+    }
 
+    public void getCountDocsClusterRoom(){
+        MongoCollection<Document> collection = db.getCollection("cluster_room");
+        try {
+            // read db
+            try {
+                System.out.println(collection.count());
+            } catch (MongoTimeoutException mte) {
+                mte.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void getAllDocClusterRoom(){
+
+        MongoCollection<Document> collection = db.getCollection("cluster_room");
+        MongoCursor<Document> cursor = collection.find().iterator();
+
+        try {
+            // read db
+            try {
+                while (cursor.hasNext()) {
+                    System.out.println(cursor.next().toJson());
+                }
+            } catch (MongoTimeoutException mte) {
+                mte.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            cursor.close();
+        }
+    }
+
+    public void getLastDocClusterRoom(){
+
+        MongoCollection<Document> collection = db.getCollection("cluster_room");
+        try {
+            try {
+                FindIterable<Document> find = collection.find().sort(new BasicDBObject("$natural", -1)).limit(1);
+                MongoCursor<Document> cursor = find.iterator();
+                while (cursor.hasNext()) {
+                    Document doc = cursor.next();
+                    double temp = (double) doc.get("temperature");
+                    double humi = (double) doc.get("humidity");
+
+                    System.out.println(temp);
+                    System.out.println(humi);
+                }
+            } catch (MongoTimeoutException mte) {
+                mte.printStackTrace();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void closeConnection(){
+        mongoClient.close();
+    }
+
+    public static void main(String args[]){
+        ConnectionDB c = new ConnectionDB();
+        c.getCountDocsClusterRoom();
+        c.getAllDocClusterRoom();
+        c.getLastDocClusterRoom();
+        c.closeConnection();
+    }
 }
