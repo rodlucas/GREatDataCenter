@@ -21,7 +21,7 @@ public class GDCServletClient {
         String line = "";
         StringBuilder getOutput = new StringBuilder();
         try {
-            URL openUrl = new URL("http://192.168.0.103:8080/GreatDataCenter/GreatDataCenterCloud");
+            URL openUrl = new URL("http://default-environment.znfv9dvjks.sa-east-1.elasticbeanstalk.com/GreatDataCenterCloud");
             HttpURLConnection connection = (HttpURLConnection) openUrl.openConnection();
             connection.setDoInput(true);
             BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
