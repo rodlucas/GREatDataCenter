@@ -10,8 +10,16 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
+
+    <service android:name=".MyFirebaseMessagingService">
+        <intent-filter>
+            <action android:name="com.google.firebase.MESSAGING_EVENT" />
+        </intent-filter>
+    </service>
+    <service
+        android:name="gcm.play.android.samples.com.gcmquickstart.RegistrationIntentService"
+        android:exported="false"></service>
 
     <application
         android:allowBackup="true"
@@ -21,30 +29,22 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".act.MainActivity"
-            android:label="@string/main_screen_title">
+            android:label="@string/main_screen_title"/>
+        <activity
+            android:name=".act.TempActivity"
+            android:label="@string/temp_screen_title" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".act.LoginActivity"
+            android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".act.TempActivity"
-            android:label="@string/temp_screen_title" />
-        <activity
-            android:name=".login.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
     </application>
-
-    <service
-        android:name=".MyFirebaseMessagingService">
-        <intent-filter>
-            <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-        </intent-filter>
-    </service>
-    <service
-        android:name="gcm.play.android.samples.com.gcmquickstart.RegistrationIntentService"
-        android:exported="false">
-    </service>
 
 </manifest>
