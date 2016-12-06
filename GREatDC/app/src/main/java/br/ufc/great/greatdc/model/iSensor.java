@@ -1,4 +1,4 @@
-package br.ufc.great.greatdc.core;
+package br.ufc.great.greatdc.model;
 
 
 public interface iSensor {

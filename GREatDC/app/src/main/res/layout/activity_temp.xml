@@ -8,12 +8,11 @@
     tools:context="br.ufc.great.greatdc.act.TempActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin">
 
         <ImageView
@@ -38,13 +37,13 @@
             android:layout_marginLeft="20dp"
             android:text="25º"
             android:textColor="@color/colorPrimary"
-            android:textSize="45dp" />
+            android:textSize="40dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:orientation="horizontal"
         android:paddingLeft="@dimen/activity_horizontal_margin">
@@ -57,33 +56,33 @@
             android:textAlignment="center"
             android:textSize="17dp" />
 
-        <TextView
-            android:id="@+id/tx_hours"
+        <Spinner
+            android:id="@+id/sp_hours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="20dp"
-            android:text="Últimas 24h"
-            android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="20dp" />
-
-        <Spinner
-            android:id="@+id/sp_hours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textColor="@color/green" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:textAlignment="textStart"
         android:layout_marginTop="10dp"
         android:background="@color/greenLight"
         android:orientation="horizontal"
-        android:paddingLeft="10dp"
+        android:paddingLeft="15dp"
         android:weightSum="2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="@string/time"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,18 +94,23 @@
             android:textColor="@color/white"
             android:textSize="15dp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_weight="1"
-            android:text="@string/time"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="15dp" />
 
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+        <WebView
+            android:id="@+id/char_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+    </RelativeLayout>
 
 
 </LinearLayout>
