@@ -1,4 +1,4 @@
-package br.ufc.great.greatdc.notifications;
+package br.ufc.great.greatdc.fcm;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;

@@ -1,4 +1,4 @@
-package br.ufc.great.greatdc.notifications;
+package br.ufc.great.greatdc.fcm;
 
 public class Constants {
  public static String PREF_GCM_REG_ID = "PREF_GCM_REG_ID";
