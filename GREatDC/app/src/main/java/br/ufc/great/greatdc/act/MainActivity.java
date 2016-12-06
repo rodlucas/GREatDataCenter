@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
     });
 
     public void changeFont(){
-        Typeface typeFace = Typeface.createFromAsset(getBaseContext().getAssets(),"fonts/norwester.otf");
+        Typeface typeFace = Typeface.createFromAsset(getBaseContext().getAssets(),"fonts/CalvertMTStd.otf");
         txStatus.setTypeface(typeFace);
         txTemperature.setTypeface(typeFace);
         txHumidity.setTypeface(typeFace);

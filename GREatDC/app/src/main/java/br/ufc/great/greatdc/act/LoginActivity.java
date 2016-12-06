@@ -52,7 +52,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "rodrigo@gmail.com:123456", "rafael@gmail.com:123456" , "felipe@gmail.com:123456"
+            "rodrigolucasalmeida@gmail.com:123456", "rafael@gmail.com:123456" , "felipe@gmail.com:123456" ,
+            "lanabeatriz.mesquita@gmail.com:123456"
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -68,7 +69,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login2);
+        setContentView(R.layout.activity_login);
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();

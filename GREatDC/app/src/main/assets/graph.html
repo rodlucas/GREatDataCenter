@@ -1,0 +1,48 @@
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['timestamp','temperature', { role: 'annotation' }],
+        ['08:00',25, '08h00 25°'],
+        ['07:00',40, '07h00 40°'],
+        ['06:00',30, '06h00 30°'],
+        ['05:00',24, '05h00 24°'],
+        ['04:00',22, '04h00 22°'],
+        ['03:00',20, '03h00 20°'],
+        ['02:00',15, '02h00 15°'],
+        ['01:00',10, '01h00 10°'],
+        ['00:00',12, '00h00 12°'],
+        ['23:00',18, '23h00 18°'],
+        ['22:00',21, '22h00 21°'],
+        ['21:00',21, '21h00 21°'],
+        ['20:00',22, '20h00 22°'],
+        ['19:00',23, '19h00 23°'],
+        ['18:00',24, '18h00 24°'],
+        ['17:00',26, '17h00 26°'],
+        ['16:00',27, '16h00 27°'],
+
+      ]);
+
+      var options = {
+        chartArea:{left:-5,top:-5,width:'100%',height:'100%'},
+        legend: { position: 'none' },
+        width: 300,
+        height: 500,
+        bar: { groupWidth: "100%" }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('myPieChart'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</head>
+<body>
+  <!-- Identify where the chart should be drawn. -->
+  <div id="myPieChart"/>
+</body>

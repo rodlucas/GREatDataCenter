@@ -1,7 +1,7 @@
-package br.ufc.great.greatdc.core.Sensors;
+package br.ufc.great.greatdc.model.Sensors;
 
 import br.ufc.great.greatdc.R;
-import br.ufc.great.greatdc.core.iSensor;
+import br.ufc.great.greatdc.model.iSensor;
 
 public class TemperatureSensor implements iSensor {
 

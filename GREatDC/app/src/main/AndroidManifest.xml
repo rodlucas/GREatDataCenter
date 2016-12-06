@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <service android:name=".MyFirebaseMessagingService">
         <intent-filter>
@@ -32,10 +33,12 @@
             android:label="@string/main_screen_title"/>
         <activity
             android:name=".act.TempActivity"
-            android:label="@string/temp_screen_title" />
-        <activity
-            android:name=".login.LoginActivity"
-            android:label="@string/title_activity_login" />
+            android:parentActivityName=".act.MainActivity"
+            android:label="@string/temp_screen_title">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".act.MainActivity" />
+        </activity>
         <activity
             android:name=".act.LoginActivity"
             android:label="@string/title_activity_login">
